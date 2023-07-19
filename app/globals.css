@@ -2,26 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.status-card {
+  @apply shadow-[9px_9px_27px_#656f7d,-9px_-9px_27px_#c3d7f3] rounded-[20px] min-h-[calc((100vh-100px-8rem)/3)] w-full h-auto mb-8 flex flex-col justify-start items-start;
+  background: #94a3b8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.task-card {
+  @apply w-auto max-w-[180px] min-w-[100px] h-[100px] min-h-[50px] max-h-[80px] shadow-lg shadow-black bg-neutral-800 rounded-md flex flex-row flex-wrap justify-center items-center px-5 py-3 overflow-x-hidden overscroll-x-contain mb-5 cursor-pointer mx-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.task-list {
+  @apply flex flex-row flex-wrap justify-evenly max-h-[calc(((100vh-100px-8rem)/3)-4rem)] h-[calc(((100vh-100px-8rem)/3)-4rem)] w-full items-start px-8 overflow-y-scroll;
 }
